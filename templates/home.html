@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--<link rel="stylesheet" href="bestfriend.css" media="screen">
         <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
-		
+		<<link rel="stylesheet" href="../static/stylesDash.css" media="screen">
+		<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet"> 
 		
 		
         <!--[if lt IE 9]>
@@ -20,12 +21,17 @@
     </head>
     <body>
         <header role="banner"> 
+			<center>
+			<img src="../static/cityscape_logo.png" alt="Cityscape" width="30%" height="30%">
+			</center>
         </header>
         <nav role="navigation">
 
         </nav>
         <div class="wrapper">
         <main role="main">
+		<br>
+			<center>
 			<h2>Search for a City</h2>
 			<!--<form> 
 			  <input type="text" id="city" name="city" value="City Name"><br>
@@ -33,16 +39,16 @@
 			  <button onclick="doStuff()" type="button">Submit</button>
 			</form>-->
 			<form action="{{ url_for('handle_data') }}" method="post"> 
-			  <input type="text" id="city" name="projectFilepath" value="City Name"><br>
+			  <input type="text" id="city" name="projectFilepath" value="City Name"><br> <!-- value="City Name" -->
 			  <br>
 			  <input type=submit value="Submit">
 			</form>
+			<br>
 			<!--
 			<p id="demo">Stuff Here</p>
 			
 			<input type="button" id='script' name="scriptbutton" value=" Run Script " onclick="goPython()">
 			-->	
-			<h1>Table</h1>
 			<table>
 			<tr>
 				<th>City</th>
@@ -60,16 +66,18 @@
 			{{ i|safe }}-->
 			{% endfor %}
 			</table>
+			<br>
+			<br>
 			
 			<h2>Enter City Data</h2>
 			<form action="{{ url_for('handle_data2') }}" method="post"> 
-			  <input type="text" id="city" name="projectFilepathC" value="City Name"><br>
-			  <input type="text" id="state" name="projectFilepathS" value="State Name"><br>
-			  <input type="text" id="pop" name="projectFilepathP" value="Population"><br>
+			  <input type="text" id="city" name="projectFilepathC" value="City Name"><br><br>
+			  <input type="text" id="state" name="projectFilepathS" value="State Name"><br><br>
+			  <input type="text" id="pop" name="projectFilepathP" value="Population"><br><br>
 			  <br>
 			  <input type=submit value="Submit">
 			</form>
-			
+			</center>
         </main>
         <footer role="contentinfo">
         </footer>
