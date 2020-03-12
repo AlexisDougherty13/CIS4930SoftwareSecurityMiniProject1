@@ -1,3 +1,8 @@
 README
 
-Enter any notes here. :-)
+Run page.py in terminal.
+View the web page by going to http://127.0.0.1:5000/. 
+
+Currently can
+*Search through database by city name
+*Enter data by city name (State and population values are hard coded currently for testing. Will change later)
