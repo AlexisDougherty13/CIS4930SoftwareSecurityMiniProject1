@@ -1,0 +1,11 @@
+body { color: navy;
+	   background-image: url('Gradient_Background.png'); 
+}
+
+th {
+	color: navy;
+  border: 1px solid white;
+}
+
+
+h2 { font-family: 'Righteous', cursive; }
