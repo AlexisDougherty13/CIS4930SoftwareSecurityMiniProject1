@@ -8,14 +8,7 @@ class City:
         self.name = name
         self.state = state
         self.population = population
- 
-def html_table(lol):
-    print '<table>'
-    for sublist in lol:
-        print '  <tr><td>'
-        print '    </td><td>'.join(sublist)
-        print '  </td></tr>'
-    print '</table>'
+
 
 app=Flask(__name__)
 @app.route('/')
@@ -26,9 +19,12 @@ def handle_data():
     projectpath = request.form['projectFilepath']
     conn = sqlite3.connect('citiesDatabase.db')
     c = conn.cursor()
-    val = (projectpath,)
+    
+    c.execute("SELECT * FROM cities WHERE name = '%s'" % projectpath)
+    
+    #val = (projectpath,) #good one
     #c.execute('INSERT INTO cities (name, state, population) VALUES (?, "STATE", 0)', val)
-    c.execute('SELECT * FROM cities WHERE name = ?', val)
+    #c.execute('SELECT * FROM cities WHERE name = ?', val) #good one
     stash = []
     for row in c.fetchall():
       name = row[0]
@@ -41,10 +37,12 @@ def handle_data():
 @app.route('/handle_date2', methods=['POST']) 
 def handle_data2():
     projectpathC = request.form['projectFilepathC']
+    projectpathS = request.form['projectFilepathS']
+    projectpathP = request.form['projectFilepathP']
     conn = sqlite3.connect('citiesDatabase.db')
     c = conn.cursor()
-    val = (projectpathC,)
-    c.execute('INSERT INTO cities (name, state, population) VALUES (?, "STATE2", 0)', val)
+    val = (projectpathC, projectpathS, projectpathP,)
+    c.execute('INSERT INTO cities (name, state, population) VALUES (?, ?, ?)', val)
     conn.commit()
     return render_template('home.html')
     
