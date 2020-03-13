@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--<link rel="stylesheet" href="bestfriend.css" media="screen">
         <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
-		<<link rel="stylesheet" href="../static/stylesDash.css" media="screen">
+		<link rel="stylesheet" href="../static/stylesDash.css" media="screen">
 		<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet"> 
 		
 		
@@ -70,13 +70,14 @@
 			<br>
 			
 			<h2>Enter City Data</h2>
-			<form action="{{ url_for('handle_data2') }}" method="post"> 
-			  <input type="text" id="city" name="projectFilepathC" value="City Name"><br><br>
-			  <input type="text" id="state" name="projectFilepathS" value="State Name"><br><br>
-			  <input type="text" id="pop" name="projectFilepathP" value="Population"><br><br>
+			<form action="{{ url_for('handle_data2') }}" method="post" onSubmit="doStuff()"> 
+			  <input type="text" id="city2" name="projectFilepathC" value="City Name"><br><br>
+			  <input type="text" id="state2" name="projectFilepathS" value="State Name"><br><br>
+			  <input type="text" id="pop2" name="projectFilepathP" value="Population"><br><br>
 			  <br>
 			  <input type=submit value="Submit">
 			</form>
+			<p id="demo"></p>
 			</center>
         </main>
         <footer role="contentinfo">
@@ -102,13 +103,10 @@
 	<script>
 		function doStuff()
 		{
-			var cityName = document.getElementById("city").value;
+			var cityName = document.getElementById("city2").value;
 			
-			document.getElementById("demo").innerHTML = "Welcome to " + cityName + "!";
+			document.getElementById("demo").innerHTML = "You entered " + cityName + ".";
 			
-			return cityName;
-			
-
 		}
 	</script>
 </html>
