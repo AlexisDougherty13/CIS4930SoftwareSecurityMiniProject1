@@ -78,6 +78,33 @@
 			  <input type=submit value="Submit">
 			</form>
 			<p id="demo"></p>
+			<br>
+			<br>
+			
+			
+			<h2>City 1's List of Buildings</h2>
+			<form action="{{ url_for('handle_data3') }}" method="post"> 
+			<select name ="DropDown" id="cars">
+			  <option value="A">Building A</option>
+			  <option value="B">Building B</option>
+			  <option value="C">Building C</option>
+			  <option value="D">Building D</option>
+			  <option value="E">Building E</option>
+			</select>
+			<br> 
+			<br>
+			<input type=submit value="Submit">
+			</form>
+			<br>
+			<th>{{ message }}</th>
+			<br>
+			<br>
+			<form action="{{ url_for('handle_data4') }}" method="post" name="adminbutton" value="ZFhObGNnPT0="> 
+				<input type=submit value="View Important Information">
+			</form>
+			
+			<br>
+			<th>{{ message2 }}</th>
 			</center>
         </main>
         <footer role="contentinfo">
