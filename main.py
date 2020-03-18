@@ -31,8 +31,9 @@ def handle_data():
       name = row[0]
       state = row[1]
       population = row[2]
-      curr = City(name, state, population)
-      stash.append(curr)
+      if name != "SecretCity":
+        curr = City(name, state, population)
+        stash.append(curr)
     #conn.commit()
     return render_template('home.html', stash=stash)
 @app.route('/handle_date2', methods=['POST']) 
@@ -46,6 +47,37 @@ def handle_data2():
     c.execute('INSERT INTO cities (name, state, population) VALUES (?, ?, ?)', val)
     conn.commit()
     return render_template('home.html')
+    
+@app.route("/handle_data3" , methods=['GET', 'POST'])
+def handle_data3():
+    select = request.form.get('DropDown')
+    if select == "A":
+        message = "Address: 123 Apple Blossem Avenue, City 1, State of Confusion 45678"
+    elif select == "B":
+        message = "Address: 456 Beautiful Butterfly Boulevard, City 1, State of Confusion 78910"
+    elif select == "C":
+        message = "Address: 789 Camelia Countess Court, City 1, State of Confusion 10111"
+    elif select == "D":
+        message = "Address: 213 Dusty Dragon Drive, City 1, State of Confusion 14151"
+    elif select == "E":
+        message = "Address: 617 Red River Road, City 1, State of Confusion 18192"
+    elif select == "F":
+        message = "Address: 021 Winter Sparks Way, City 1, State of Confusion 22232"
+    else:
+        message = "Not a Building"
+    return render_template('home.html', message=message)
+    #return(str(select)) # just to see what select is
+    
+@app.route("/handle_data4" , methods=['GET', 'POST'])
+def handle_data4():
+    userType = request.form.get('adminbutton')
+    if userType == "WVdSdGFXND0=":
+        #admin user
+        message2 = "The tresure is located in Building F."
+    else:
+        message2 = "Unable to access data. You are not an admin."
+    return render_template('home.html', message2=message2)
+    
 @app.route('/login', methods=['POST'])
 def login():
     username = request.form['username']
@@ -94,4 +126,6 @@ def redirect():
     return render_template('createAccount.html')
     
 if __name__ =='__main__':
-	app.run(host="127.0.0.1",port=8080, debug=True)
+	app.run(debug=True)
+    
+    
