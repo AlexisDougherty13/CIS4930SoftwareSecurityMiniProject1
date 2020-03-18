@@ -99,9 +99,12 @@
 			<th>{{ message }}</th>
 			<br>
 			<br>
-			<form action="{{ url_for('handle_data4') }}" method="post" name="adminbutton" value="ZFhObGNnPT0="> 
-				<input type=submit value="View Important Information">
+			<form action="{{ url_for('handle_data4') }}" method="post" > 
+				<button type=submit name="adminbutton" value="ZFhObGNnPT0=">View Important Information</button>
 			</form>
+			<!--<form action="{{ url_for('handle_data4') }}" method="post" name="adminbutton" value="ZFhObGNnPT0="> 
+				<input type=submit value="View Important Information">
+			</form>-->
 			
 			<br>
 			<th>{{ message2 }}</th>
