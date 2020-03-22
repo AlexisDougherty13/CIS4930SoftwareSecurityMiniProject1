@@ -9,3 +9,12 @@ th {
 
 
 h2 { font-family: 'Righteous', cursive; }
+
+.buttonBox { border: 1px solid #A9A9A9;
+			 border-radius: 25px;
+			 background-color: silver; }
+			 
+.floater { float: left;
+			color: red;}
+			
+.buttonBox:hover { background-color: white; }
