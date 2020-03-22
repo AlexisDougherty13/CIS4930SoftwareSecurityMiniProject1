@@ -3,6 +3,8 @@ from flask import Flask, render_template
 from flask import request
 import pandas as pd
 import bcrypt
+from jinja2 import escape
+from jinja2 import Markup
 
 class City:
     def __init__(self, name, state, population):
@@ -70,13 +72,33 @@ def handle_data3():
     
 @app.route("/handle_data4" , methods=['GET', 'POST'])
 def handle_data4():
-    userType = request.form.get('adminbutton')
+    userType = request.args.get('userType')
+    #userType = request.form.get('adminbutton')
     if userType == "WVdSdGFXND0=":
         #admin user
         message2 = "The tresure is located in Building F."
     else:
         message2 = "Unable to access data. You are not an admin."
     return render_template('home.html', message2=message2)
+    
+@app.route('/handle_dataB', methods=['POST'])
+def handle_dataB():
+    projectpath = request.form['projectFilepath']
+    conn = sqlite3.connect('citiesDatabase.db')
+    c = conn.cursor()
+    val = (projectpath,) #good one
+    c.execute('SELECT * FROM cities WHERE name = ?', val) #good one
+    print c.fetchall()
+    stash = []
+    for row in c.fetchall():
+      name = row[0]
+      state = row[1]
+      population = row[2]
+      curr = City(name, state, population)
+      stash.append(curr)
+    #conn.commit()
+    return render_template('home.html', stash=stash)   
+    
     
 @app.route('/login', methods=['POST'])
 def login():
@@ -104,7 +126,7 @@ def login():
       userN = userN.encode('utf-8')
       passW = passW.encode('utf-8')
       if bcrypt.checkpw(uniUser, userN) and bcrypt.checkpw(uniPass, passW): #userN == username and passW == password:
-        return render_template('home.html')
+        return render_template('decide.html')
     return render_template('index.html', message=message)
 @app.route('/create_account', methods=['POST'])
 def create_account():
@@ -124,6 +146,14 @@ def create_account():
 @app.route('/redirect', methods=['POST'])
 def redirect():
     return render_template('createAccount.html')
+    
+@app.route('/decide_good')
+def decide_good():
+    return render_template('betterHome.html')
+    
+@app.route('/decide_bad')
+def decide_bad():
+    return render_template('home.html')
     
 if __name__ =='__main__':
 	app.run(debug=True)
