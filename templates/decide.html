@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dashboard Options</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../static/stylesDash3.css" media="screen">
+		<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet"> 
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+        </script>
+        <![endif]-->
+        <!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js">
+        </script>
+        <![endif]-->
+    </head>
+    <body>
+        <header role="banner"> 
+			<center>
+			<img src="../static/cityscape_logo.png" alt="Cityscape" width="30%" height="30%">
+			</center>
+        </header>
+		<br>
+		<br>
+        <main role="main">
+		<br>
+			<center style="">
+			<form action="{{ url_for('decide_bad') }}">
+				<input type="submit" name="submit_button1" value="Insecure Dashboard" class="buttonBox" style="padding: 5em;">
+			</form>
+			<br>
+			<form action="{{ url_for('decide_good') }}">
+				<input type="submit" name="submit_button2" value="Secure Dashboard" class="buttonBox" style="padding: 5em;">
+			</form>
+			</center>
+        </main>
+
+    </body>
+	
+	 <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</html>
