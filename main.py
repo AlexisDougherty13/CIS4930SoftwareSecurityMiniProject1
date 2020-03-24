@@ -88,7 +88,7 @@ def handle_dataB():
     c = conn.cursor()
     val = (projectpath,) #good one
     c.execute('SELECT * FROM cities WHERE name = ?', val) #good one
-    print c.fetchall()
+    print (c.fetchall())
     stash = []
     for row in c.fetchall():
       name = row[0]
@@ -153,7 +153,7 @@ def decide_good():
     
 @app.route('/decide_bad')
 def decide_bad():
-    return render_template('home.html')
+    return render_template('home.php')
     
 if __name__ =='__main__':
 	app.run(debug=True)
