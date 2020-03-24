@@ -30,15 +30,15 @@
 			<center>
 
 
-        <p>
-          <?php
-	require 'functions.php';
+        <!--<p>
+          //<?php
+	//require 'functions.php';
           
-	$str1="Hello world!<script>alert(1);</script>";
+	//$str1="Hello world!<script>alert(1);</script>";
 
-	echo escape($str1);
-	?>
-	</p>
+	//echo escape($str1);
+	//?>
+	</p>-->
 			<h2>Search for a City</h2>
 			<form action="{{ url_for('handle_dataB') }}" method="post"> 
 			  <input type="text" id="city" name="projectFilepath" value="City Name"><br> 
@@ -65,7 +65,7 @@
 			<br>
 			
 			<h2>Enter City Data</h2>
-			<form action="{{ url_for('handle_data2') }}" method="post" onSubmit="doStuff()"> 
+			<form action="{{ url_for('handle_data2B') }}" method="post" onSubmit="doStuff()"> 
 			  <input type="text" id="city2" name="{{projectFilepathC | e}}" value="City Name"><br><br>
 			  <input type="text" id="state2" name="projectFilepathS" value="State Name"><br><br>
 			  <input type="text" id="pop2" name="projectFilepathP" value="Population"><br><br>
@@ -79,11 +79,11 @@
 			<h2>City 1's List of Buildings</h2>
 			<form action="{{ url_for('handle_data3') }}" method="post"> 
 			<select name ="DropDown" id="cars">
-			  <option value="A">Building A</option>
-			  <option value="B">Building B</option>
-			  <option value="C">Building C</option>
-			  <option value="D">Building D</option>
-			  <option value="E">Building E</option>
+			  <option type="hidden" value="A">Building A</option>
+			  <option type="hidden" value="B">Building B</option>
+			  <option type="hidden" value="C">Building C</option>
+			  <option type="hidden" value="D">Building D</option>
+			  <option type="hidden" value="E">Building E</option>
 			</select>
 			<br> 
 			<br>
