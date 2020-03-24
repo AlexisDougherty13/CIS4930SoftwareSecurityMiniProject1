@@ -1,33 +1,9 @@
 README
 
-Run page.py in terminal by cd into the folder with page.py and running: python page.py
-View the web page by going to http://127.0.0.1:5000/. 
-Be sure to install flask, pandas, and bcrypt before running the code locally.
-pip install flask
-pip install pandas
-pip install bcrypt
-
-Currently can
-* Search through database by city name
-* Enter data by city name 
-* Has a login page that determined if the login is correct or not before letting the user into the dashboard.
-* Has a create account page that saves and encrypts the new username and password.
-
-Attacks Implimented:
-* SQL Injection: Enter 'OR'1=1 into the "search for cities" textbox.
-* Cross Site Scripting: Enter <IMG SRC="#" ONERROR="alert('Attack')"/> into the city box under "enter city info"
-NOTE: Can't do anymore different attacks until deployed on the cloud.
+Deployed Link: https://irelis-test.appspot.com/
 
 One of the correct login usernames and password is:
 username - admin
 password - admin
 Use this to get onto the dashboard. Alternativly, you can make your own account on the create account page.
-
-What's left to do?
-* Make complete hardened site
-* Add/test two more attacks (just need to test.)
-
-New Stuff (3/17/20)
-* Edited Home.html, Index.html, and Main.py
-
 
