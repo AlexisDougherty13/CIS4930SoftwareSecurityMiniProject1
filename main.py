@@ -99,6 +99,19 @@ def handle_dataB():
     #conn.commit()
     return render_template('home.php', stash=stash)   
     
+@app.route('/handle_date2B', methods=['POST']) 
+def handle_data2():
+    projectpathC = request.form['projectFilepathC']
+    projectpathS = request.form['projectFilepathS']
+    projectpathP = request.form['projectFilepathP']
+    if ("<" in projectpathC) or ("<" in projectpathS) or ("<" in projectpathP):
+		return render_template('home.php')
+    conn = sqlite3.connect('citiesDatabase.db')
+    c = conn.cursor()
+    val = (projectpathC, projectpathS, projectpathP,)
+    c.execute('INSERT INTO cities (name, state, population) VALUES (?, ?, ?)', val)
+    conn.commit()
+    return render_template('home.php')
     
 @app.route('/login', methods=['POST'])
 def login():
