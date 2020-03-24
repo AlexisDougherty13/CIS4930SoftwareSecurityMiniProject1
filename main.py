@@ -100,12 +100,12 @@ def handle_dataB():
     return render_template('home.php', stash=stash)   
     
 @app.route('/handle_date2B', methods=['POST']) 
-def handle_data2():
+def handle_data5(): #changed by Irelis; used to be handle_data2() to fix: "AssertionError: View function mapping is overwriting an existing endpoint function: handle_data2"
     projectpathC = request.form['projectFilepathC']
     projectpathS = request.form['projectFilepathS']
     projectpathP = request.form['projectFilepathP']
     if ("<" in projectpathC) or ("<" in projectpathS) or ("<" in projectpathP):
-	return render_template('home.php')
+	    return render_template('home.php')
     conn = sqlite3.connect('citiesDatabase.db')
     c = conn.cursor()
     val = (projectpathC, projectpathS, projectpathP,)
