@@ -41,17 +41,17 @@
         <main role="main">
 		<br>
 			<center>
-        <p>
+        <!--<p>
 
 
-          <?php
+          //<?php
 
           
-	$str1="Hello world!<script>alert(1);</script>";
+	//$str1="Hello world!<script>alert(1);</script>";
 
-	echo $str1;
-	?>
-	</p>
+	//echo $str1;
+	//?>
+	</p>-->
 
 
 			<h2>Search for a City</h2>
