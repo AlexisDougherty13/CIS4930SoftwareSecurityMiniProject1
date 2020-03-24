@@ -37,7 +37,7 @@ def handle_data():
         curr = City(name, state, population)
         stash.append(curr)
     #conn.commit()
-    return render_template('home.html', stash=stash)
+    return render_template('home.php', stash=stash)
 @app.route('/handle_date2', methods=['POST']) 
 def handle_data2():
     projectpathC = request.form['projectFilepathC']
@@ -48,7 +48,7 @@ def handle_data2():
     val = (projectpathC, projectpathS, projectpathP,)
     c.execute('INSERT INTO cities (name, state, population) VALUES (?, ?, ?)', val)
     conn.commit()
-    return render_template('home.html')
+    return render_template('home.php')
     
 @app.route("/handle_data3" , methods=['GET', 'POST'])
 def handle_data3():
@@ -67,7 +67,7 @@ def handle_data3():
         message = "Address: 021 Winter Sparks Way, City 1, State of Confusion 22232"
     else:
         message = "Not a Building"
-    return render_template('home.html', message=message)
+    return render_template('home.php', message=message)
     #return(str(select)) # just to see what select is
     
 @app.route("/handle_data4" , methods=['GET', 'POST'])
@@ -79,7 +79,7 @@ def handle_data4():
         message2 = "The tresure is located in Building F."
     else:
         message2 = "Unable to access data. You are not an admin."
-    return render_template('home.html', message2=message2)
+    return render_template('home.php', message2=message2)
     
 @app.route('/handle_dataB', methods=['POST'])
 def handle_dataB():
@@ -97,7 +97,7 @@ def handle_dataB():
       curr = City(name, state, population)
       stash.append(curr)
     #conn.commit()
-    return render_template('home.html', stash=stash)   
+    return render_template('home.php', stash=stash)   
     
     
 @app.route('/login', methods=['POST'])
@@ -149,7 +149,7 @@ def redirect():
     
 @app.route('/decide_good')
 def decide_good():
-    return render_template('betterHome.html')
+    return render_template('betterHome.php')
     
 @app.route('/decide_bad')
 def decide_bad():
