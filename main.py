@@ -72,8 +72,8 @@ def handle_data3():
     
 @app.route("/handle_data4" , methods=['GET', 'POST'])
 def handle_data4():
-    #userType = request.args.get('userType')
-    userType = request.form.get('adminbutton')
+    userType = request.args.get('userType')
+    #userType = request.form.get('adminbutton')
     if userType == "WVdSdGFXND0=":
         #admin user
         message2 = "The tresure is located in Building F."
@@ -105,7 +105,7 @@ def handle_data2():
     projectpathS = request.form['projectFilepathS']
     projectpathP = request.form['projectFilepathP']
     if ("<" in projectpathC) or ("<" in projectpathS) or ("<" in projectpathP):
-		return render_template('home.php')
+	return render_template('home.php')
     conn = sqlite3.connect('citiesDatabase.db')
     c = conn.cursor()
     val = (projectpathC, projectpathS, projectpathP,)
