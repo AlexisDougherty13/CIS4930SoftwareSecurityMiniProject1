@@ -7,12 +7,8 @@
         <title>Dashboard</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--<link rel="stylesheet" href="bestfriend.css" media="screen">
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
-		<link rel="stylesheet" href="../static/stylesDash.css" media="screen">
-		<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
-
-
+	<link rel="stylesheet" href="../static/stylesDash.css" media="screen">
+	<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
         </script>
@@ -23,11 +19,6 @@
         <![endif]-->
     </head>
     <body>
-
-
-
-
-
 
         <header role="banner">
 			<center>
@@ -41,36 +32,16 @@
         <main role="main">
 		<br>
 			<center>
-        <!--<p>
-
-
-          //<?php
-
-          
-	//$str1="Hello world!<script>alert(1);</script>";
-
-	//echo $str1;
-	//?>
-	</p>-->
-
 
 			<h2>Search for a City</h2>
-			<!--<form>
-			  <input type="text" id="city" name="city" value="City Name"><br>
-			  <br>
-			  <button onclick="doStuff()" type="button">Submit</button>
-			</form>-->
+
 			<form action="{{ url_for('handle_data') }}" method="post">
 			  <input type="text" id="city" name="projectFilepath" value="City Name"><br> <!-- value="City Name" -->
 			  <br>
 			  <input type=submit value="Submit">
 			</form>
 			<br>
-			<!--
-			<p id="demo">Stuff Here</p>
 
-			<input type="button" id='script' name="scriptbutton" value=" Run Script " onclick="goPython()">
-			-->
 			<table>
 			<tr>
 				<th>City</th>
@@ -78,14 +49,11 @@
 				<th>Population</th>
 			</tr>
 			{% for i in stash %}
-			<!--<p>{{ i.name }}</p>-->
 			<tr>
 				<th>{{ i.name }}</th>
 				<th>{{ i.state }}</th>
 				<th>{{ i.population }}</th>
 			</tr>
-			<!--<h2>{{stash[loop.index]}}</h2>
-			{{ i|safe }}-->
 			{% endfor %}
 			</table>
 			<br>
@@ -121,12 +89,9 @@
 			<th>{{ message }}</th>
 			<br>
 			<br>
-			<form action="{{ url_for('handle_data4') }}" method="post" >
-				<button type=submit name="adminbutton" value="ZFhObGNnPT0=">View Important Information</button>
+			<form action="{{ url_for('handle_data4') }}">
+				<input type=submit name="ZFhObGNnPT0=" value="View Important Information">
 			</form>
-			<!--<form action="{{ url_for('handle_data4') }}" method="post" name="adminbutton" value="ZFhObGNnPT0=">
-				<input type=submit value="View Important Information">
-			</form>-->
 
 
 
