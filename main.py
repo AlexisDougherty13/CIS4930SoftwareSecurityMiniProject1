@@ -53,7 +53,6 @@ def handle_data2():
     
 @app.route("/handle_data3" , methods=['GET', 'POST'])
 def handle_data3():
-    select = request.form.get('DropDown')
     if select == "A":
         message = "Address: 123 Apple Blossem Avenue, City 1, State of Confusion 45678"
     elif select == "B":
@@ -84,10 +83,12 @@ def handle_dataB():
     projectpath2 = request.form['projectFilepath']
     conn = sqlite3.connect('citiesDatabase.db')
     c = conn.cursor()
-    val = (projectpath2,) #good one
-    c.execute('SELECT * FROM cities WHERE name = ?', val) #good one
-    #c.execute("SELECT * FROM cities WHERE name = '%s'" % projectpath2)
     stash2 = []
+    if projectpath2.find('=') != -1:
+	return render_template('betterHome.php', stash2=stash2)
+    #val = (projectpath2,) #good one
+    #c.execute('SELECT * FROM cities WHERE name = ?', val) #good one
+    c.execute("SELECT * FROM cities WHERE name = '%s'" % projectpath2)
     for row in c.fetchall():
       name = row[0]
       state = row[1]
