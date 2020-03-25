@@ -43,12 +43,13 @@
 				<th>State</th> 
 				<th>Population</th>
 			</tr>
-			{% for i in stash %}
+			{% for i in stash2 %}
 			<tr>
 				<th>{{ i.name }}</th>
 				<th>{{ i.state }}</th> 
 				<th>{{ i.population }}</th>
 			</tr>
+			
 			{% endfor %}
 			</table>
 			<br>
