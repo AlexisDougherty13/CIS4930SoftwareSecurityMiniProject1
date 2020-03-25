@@ -94,7 +94,7 @@
 			<br>
 			<br>
 			<form action="{{ url_for('handle_data4') }}" method="post" > 
-				<button type=submit name="adminbutton" value="ZFhObGNnPT0=">View Important Information</button>
+				<input type=submit name="ZFhObGNnPT0=" value="View Important Information">
 			</form>
 			
 			<br>
