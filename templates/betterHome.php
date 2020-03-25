@@ -30,7 +30,7 @@
 			<center>
 
 			<h2>Search for a City</h2>
-			<form action="{{ url_for('handle_dataB') }}" method="post"> 
+			<form action="{{ url_for('handle_data') }}" method="post"> 
 			  <input type="text" id="city" name="projectFilepath" value="City Name"><br> 
 			  <br>
 			  <input type=submit value="Submit">
