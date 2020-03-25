@@ -5,6 +5,7 @@ import pandas as pd
 import bcrypt
 from jinja2 import escape
 from jinja2 import Markup
+from flask import escape
 
 class City:
     def __init__(self, name, state, population):
@@ -109,6 +110,17 @@ def handle_data5(): #changed by Irelis; used to be handle_data2() to fix: "Asser
     c.execute('INSERT INTO cities (name, state, population) VALUES (?, ?, ?)', val)
     conn.commit()
     return render_template('home.php')
+
+@app.route('/handle_dataa', methods=['POST']) #'/test.py'
+def handle_dataa():
+	name = 'Asia<script>alert(1)</script>'
+	return "Hello %s" % name;
+
+@app.route('/handle_dataaB', methods=['POST']) #'/test.py'
+def handle_dataaB():
+	name = 'Asia<script>alert(1)</script>'
+	return "Hello %s" % escape(name);
+
     
 @app.route('/login', methods=['POST'])
 def login():
