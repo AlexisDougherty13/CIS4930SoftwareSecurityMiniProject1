@@ -113,13 +113,15 @@ def handle_data5(): #changed by Irelis; used to be handle_data2() to fix: "Asser
 
 @app.route('/handle_dataa', methods=['POST']) #'/test.py'
 def handle_dataa():
-	name = 'Asia<script>alert(1)</script>'
-	return "Hello %s" % name;
+	enterdata = request.form['enterdata']
+	#name = 'Asia<script>alert(1)</script>'
+	return "Hello %s" % enterdata;
 
 @app.route('/handle_dataaB', methods=['POST']) #'/test.py'
 def handle_dataaB():
-	name = 'Asia<script>alert(1)</script>'
-	return "Hello %s" % escape(name);
+	enterdata = request.form['enterdata']
+	#name = 'Asia<script>alert(1)</script>'
+	return "Hello %s" % escape(enterdata);
 
     
 @app.route('/login', methods=['POST'])
