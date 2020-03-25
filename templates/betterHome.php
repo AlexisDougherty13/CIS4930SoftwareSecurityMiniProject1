@@ -30,7 +30,7 @@
 			<center>
 
 			<h2>Search for a City</h2>
-			<form action="{{ url_for('handle_data') }}" method="post"> 
+			<form action="{{ url_for('handle_dataB') }}" method="post"> 
 			  <input type="text" id="city" name="projectFilepath" value="City Name"><br> 
 			  <br>
 			  <input type=submit value="Submit">
@@ -75,13 +75,13 @@
 			<br>
 			
 			<h2>City 1's List of Buildings</h2>
-			<form action="{{ url_for('handle_data3B') }}" method="get"> 
+			<form action="{{ url_for('handle_data3B') }}" method="post"> 
 			<select name ="DropDown" id="cars">
-			  <option type="hidden" value="A">Building A</option>
-			  <option type="hidden" value="B">Building B</option>
-			  <option type="hidden" value="C">Building C</option>
-			  <option type="hidden" value="D">Building D</option>
-			  <option type="hidden" value="E">Building E</option>
+			  <option type="hidden" value="QRD">Building A</option>
+			  <option type="hidden" value="AHE">Building B</option>
+			  <option type="hidden" value="ZJL">Building C</option>
+			  <option type="hidden" value="CSP">Building D</option>
+			  <option type="hidden" value="YNV">Building E</option>
 			</select>
 			<br> 
 			<br>
@@ -91,8 +91,8 @@
 			<th>{{ message }}</th>
 			<br>
 			<br>
-			<form action="{{ url_for('handle_data4B') }}" method="get"> 
-				<input type=submit name="ZFhObGNnPT0=" value="View Important Information">
+			<form action="{{ url_for('handle_data4B') }}" method="post"> 
+				<input type=submit name="8K72D" value="View Important Information">
 			</form>
 			
 			<br>
