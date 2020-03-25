@@ -82,20 +82,21 @@ def handle_data4():
 @app.route('/handle_dataB', methods=['POST'])
 def handle_dataB():
     projectpath = request.form['projectFilepath']
+    print(projectpath)
     conn = sqlite3.connect('citiesDatabase.db')
     c = conn.cursor()
     val = (projectpath,) #good one
     c.execute('SELECT * FROM cities WHERE name = ?', val) #good one
     print (c.fetchall())
-    stash = []
+    stash2 = []
     for row in c.fetchall():
       name = row[0]
       state = row[1]
       population = row[2]
       curr = City(name, state, population)
-      stash.append(curr)
+      stash2.append(curr)
     #conn.commit()
-    return render_template('betterHome.php', stash=stash)   
+    return render_template('betterHome.php', stash2=stash2)   
     
 @app.route('/handle_date2B', methods=['POST']) 
 def handle_data2B(): #changed by Irelis; used to be handle_data2() to fix: "AssertionError: View function mapping is overwriting an existing endpoint function: handle_data2"
