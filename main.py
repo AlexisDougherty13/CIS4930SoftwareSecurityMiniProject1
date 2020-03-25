@@ -84,11 +84,11 @@ def handle_dataB():
     conn = sqlite3.connect('citiesDatabase.db')
     c = conn.cursor()
     stash2 = []
-    if projectpath2.find('=') != -1:
-	return render_template('betterHome.php', stash2=stash2)
-    #val = (projectpath2,) #good one
-    #c.execute('SELECT * FROM cities WHERE name = ?', val) #good one
-    c.execute("SELECT * FROM cities WHERE name = '%s'" % projectpath2)
+    #if projectpath2.find('=') != -1:
+	#return render_template('betterHome.php', stash2=stash2)
+    val = (projectpath2,) #good one
+    c.execute('SELECT * FROM cities WHERE name = ?', val) #good one
+    #c.execute("SELECT * FROM cities WHERE name = '%s'" % projectpath2)
     for row in c.fetchall():
       name = row[0]
       state = row[1]
