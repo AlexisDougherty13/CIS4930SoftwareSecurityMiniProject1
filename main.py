@@ -72,10 +72,7 @@ def handle_data3():
     
 @app.route("/handle_data4" , methods=['GET', 'POST'])
 def handle_data4():
-    userType = request.args.get('userType')
-    #userType = request.form.get('adminbutton')
-    if userType == "WVdSdGFXND0=":
-        #admin user
+    if 'WVdSdGFXND0=' in request.form:
         message2 = "The tresure is located in Building F."
     else:
         message2 = "Unable to access data. You are not an admin."
