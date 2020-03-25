@@ -73,6 +73,7 @@
 				
 			<h2>test</h2>
 			<form action="{{ url_for('handle_dataa') }}" method="post">
+			  <input type="text" id="enterdata" name="enterdata" value="Enter a Place"><br><br>
 			  <input type=submit value="Submit">
 			</form>
 			<br>
