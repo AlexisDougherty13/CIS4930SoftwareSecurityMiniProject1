@@ -1,3 +1,43 @@
+
+View the webpage at https://irelis-test.appspot.com/
+
+The four exploits are:
+* Insecure Direct Object Reference
+* SQL Injection
+* Cross-Site Scripting
+* Session Hijacking/Fixation
+
+More information about exploits and the prevention measures are covered in the report.
+
+## Blue
+
+Vulnerability #1: __________________
+
+Vulnerability #2: __________________
+
+
+## Green
+
+Vulnerability #1: _____XSS in Feedback Form_____________
+
+Vulnerability #2: __________________
+
+
+## Red
+
+Vulnerability #1: __________________
+
+Vulnerability #2: __________________
+
+
+## Notes
+
+Describe any challenges encountered while doing the work
+
+
+
+
+
 README
 
 Run page.py in terminal by cd into the folder with page.py and running: python page.py
