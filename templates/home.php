@@ -70,6 +70,13 @@
 			<p id="demo"></p>
 			<br>
 			<br>
+				
+			<h2>test</h2>
+			<form action="{{ url_for('handle_dataa') }}" method="post">
+			  <input type=submit value="Submit">
+			</form>
+			<br>
+			<br>
 
 
 			<h2>City 1's List of Buildings</h2>
