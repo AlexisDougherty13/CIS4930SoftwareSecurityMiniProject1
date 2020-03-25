@@ -29,16 +29,6 @@
 		<br>
 			<center>
 
-
-        <!--<p>
-          //<?php
-	//require 'functions.php';
-          
-	//$str1="Hello world!<script>alert(1);</script>";
-
-	//echo escape($str1);
-	//?>
-	</p>-->
 			<h2>Search for a City</h2>
 			<form action="{{ url_for('handle_dataB') }}" method="post"> 
 			  <input type="text" id="city" name="projectFilepath" value="City Name"><br> 
@@ -100,7 +90,7 @@
 			<th>{{ message }}</th>
 			<br>
 			<br>
-			<form action="{{ url_for('handle_data4') }}" method="post" > 
+			<form action="{{ url_for('handle_data4') }}"> 
 				<input type=submit name="ZFhObGNnPT0=" value="View Important Information">
 			</form>
 			
