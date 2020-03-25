@@ -75,7 +75,7 @@
 			<br>
 			
 			<h2>City 1's List of Buildings</h2>
-			<form action="{{ url_for('handle_data3') }}" method="post"> 
+			<form action="{{ url_for('handle_data3B') }}" method="post"> 
 			<select name ="DropDown" id="cars">
 			  <option type="hidden" value="A">Building A</option>
 			  <option type="hidden" value="B">Building B</option>
@@ -91,7 +91,7 @@
 			<th>{{ message }}</th>
 			<br>
 			<br>
-			<form action="{{ url_for('handle_data4') }}"> 
+			<form action="{{ url_for('handle_data4B') }}" method="post"> 
 				<input type=submit name="ZFhObGNnPT0=" value="View Important Information">
 			</form>
 			
