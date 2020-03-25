@@ -81,12 +81,13 @@ def handle_data4():
     
 @app.route('/handle_dataB', methods=['POST'])
 def handle_dataB():
-    projectpath = request.form['projectFilepath']
-    print(projectpath)
+    projectpath2 = request.form['projectFilepath']
+    print(projectpath2)
     conn = sqlite3.connect('citiesDatabase.db')
     c = conn.cursor()
-    val = (projectpath,) #good one
-    c.execute('SELECT * FROM cities WHERE name = ?', val) #good one
+    val = (projectpath2,) #good one
+    #c.execute('SELECT * FROM cities WHERE name = ?', val) #good one
+    c.execute("SELECT * FROM cities WHERE name = '%s'" % projectpath2)
     print (c.fetchall())
     stash2 = []
     for row in c.fetchall():
