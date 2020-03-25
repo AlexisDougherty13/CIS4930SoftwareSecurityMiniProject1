@@ -53,6 +53,7 @@ def handle_data2():
     
 @app.route("/handle_data3" , methods=['GET', 'POST'])
 def handle_data3():
+    select = request.form.get('DropDown')
     if select == "A":
         message = "Address: 123 Apple Blossem Avenue, City 1, State of Confusion 45678"
     elif select == "B":
