@@ -95,10 +95,10 @@ def handle_dataB():
       curr = City(name, state, population)
       stash.append(curr)
     #conn.commit()
-    return render_template('home.php', stash=stash)   
+    return render_template('betterHome.php', stash=stash)   
     
 @app.route('/handle_date2B', methods=['POST']) 
-def handle_data5(): #changed by Irelis; used to be handle_data2() to fix: "AssertionError: View function mapping is overwriting an existing endpoint function: handle_data2"
+def handle_data2B(): #changed by Irelis; used to be handle_data2() to fix: "AssertionError: View function mapping is overwriting an existing endpoint function: handle_data2"
     projectpathC = request.form['projectFilepathC']
     projectpathS = request.form['projectFilepathS']
     projectpathP = request.form['projectFilepathP']
@@ -109,7 +109,35 @@ def handle_data5(): #changed by Irelis; used to be handle_data2() to fix: "Asser
     val = (projectpathC, projectpathS, projectpathP,)
     c.execute('INSERT INTO cities (name, state, population) VALUES (?, ?, ?)', val)
     conn.commit()
-    return render_template('home.php')
+    return render_template('betterHome.php')
+
+@app.route("/handle_data3B" , methods=['GET', 'POST'])
+def handle_data3B():
+    select = request.form.get('DropDown')
+    if select == "A":
+        message = "Address: 123 Apple Blossem Avenue, City 1, State of Confusion 45678"
+    elif select == "B":
+        message = "Address: 456 Beautiful Butterfly Boulevard, City 1, State of Confusion 78910"
+    elif select == "C":
+        message = "Address: 789 Camelia Countess Court, City 1, State of Confusion 10111"
+    elif select == "D":
+        message = "Address: 213 Dusty Dragon Drive, City 1, State of Confusion 14151"
+    elif select == "E":
+        message = "Address: 617 Red River Road, City 1, State of Confusion 18192"
+    elif select == "F":
+        message = "Address: 021 Winter Sparks Way, City 1, State of Confusion 22232"
+    else:
+        message = "Not a Building"
+    return render_template('betterHome.php', message=message)
+    #return(str(select)) # just to see what select is
+
+@app.route("/handle_data4B" , methods=['GET', 'POST'])
+def handle_data4B():
+    if 'WVdSdGFXND0=' in request.form:
+        message2 = "The tresure is located in Building F."
+    else:
+        message2 = "Unable to access data. You are not an admin."
+    return render_template('betterHome.php', message2=message2)
 
 @app.route('/handle_dataa', methods=['POST']) #'/test.py'
 def handle_dataa():
