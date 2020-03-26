@@ -13,51 +13,51 @@ More information about exploits and the prevention measures are covered in the r
 ## SQL Injection
 
 Insecure Dashboard 
-<img src="Unit78-Recording1.gif" width="800">
+<img src="SQL-Injection.gif" width="800">
 
 Secure Dashboard 
-<img src="Unit78-Recording1.gif" width="800">
+<img src="SQL-Prevention.gif" width="800">
 
 
 ## Cross-Site Scripting
 
 Insecure Dashboard 
-<img src="Unit78-Recording1.gif" width="800">
+<img src="XSS-Exploit.gif" width="800">
 
 Secure Dashboard 
-<img src="Unit78-Recording1.gif" width="800">
+<img src="XSS-Prevention.gif" width="800">
 
 
 ## Insecure Direct Object Reference
 
 Insecure Dashboard 
-<img src="Unit78-Recording1.gif" width="800">
+<img src="IDOR-Exploit.gif" width="800">
 
 Secure Dashboard 
-<img src="Unit78-Recording1.gif" width="800">
+<img src="IDOR-Prevention.gif" width="800">
 
 
 ## Session Managment
 
 Insecure Dashboard 
-<img src="Unit78-Recording1.gif" width="800">
+<img src="Sessions-Exploit.gif" width="800">
 
 Secure Dashboard 
-<img src="Unit78-Recording1.gif" width="800">
+<img src="Sessions-Prevention.gif" width="800">
 
 
 ## Salt and Pepper Decryption
 
-<img src="Unit78-Recording1.gif" width="800">
+<img src="AccountsCrypted.jpg" width="800">
 
 
 ## Logging In and Creating an Account
 
 Login
-<img src="Unit78-Recording1.gif" width="800">
+<img src="logging-in.gif" width="800">
 
 Create Account
-<img src="Unit78-Recording1.gif" width="800">
+<img src="create-account.gif" width="800">
 
 
 
