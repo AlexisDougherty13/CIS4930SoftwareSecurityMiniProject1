@@ -9,8 +9,8 @@ The four exploits are:
 * Session Hijacking/Fixation, Session Managment
 
 More information about exploits and the prevention measures are covered in the <a href="Report.md">report</a> within this folder.
-<a href="Abuse Case Diagram.pdf">Abuse Case Diagram</a>
-<a href="Use Case Diagram.pdf">Use Case Diagram</a>
+<br><a href="Abuse Case Diagram.pdf">Abuse Case Diagram</a>
+<br><a href="Use Case Diagram.pdf">Use Case Diagram</a>
 
 ## SQL Injection
 
