@@ -53,10 +53,10 @@ Secure Dashboard
 
 ## Logging In and Creating an Account
 
-Login
+Login<br>
 <img src="logging-in.gif" width="800">
 
-Create Account
+Create Account<br>
 <img src="create-account.gif" width="800">
 
 
