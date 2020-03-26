@@ -8,7 +8,7 @@ The four exploits are:
 * Insecure Direct Object Reference
 * Session Hijacking/Fixation, Session Managment
 
-More information about exploits and the prevention measures are covered in the report.
+More information about exploits and the prevention measures are covered in the report within this folder.
 
 ## SQL Injection
 
