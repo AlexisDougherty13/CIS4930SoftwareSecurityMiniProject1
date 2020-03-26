@@ -5,6 +5,7 @@ import pandas as pd
 import bcrypt
 from jinja2 import escape
 from jinja2 import Markup
+from flask import escape
 
 class City:
     def __init__(self, name, state, population):
@@ -37,7 +38,7 @@ def handle_data():
         curr = City(name, state, population)
         stash.append(curr)
     #conn.commit()
-    return render_template('home.html', stash=stash)
+    return render_template('home.php', stash=stash)
 @app.route('/handle_date2', methods=['POST']) 
 def handle_data2():
     projectpathC = request.form['projectFilepathC']
@@ -48,7 +49,7 @@ def handle_data2():
     val = (projectpathC, projectpathS, projectpathP,)
     c.execute('INSERT INTO cities (name, state, population) VALUES (?, ?, ?)', val)
     conn.commit()
-    return render_template('home.html')
+    return render_template('home.php')
     
 @app.route("/handle_data3" , methods=['GET', 'POST'])
 def handle_data3():
@@ -67,38 +68,91 @@ def handle_data3():
         message = "Address: 021 Winter Sparks Way, City 1, State of Confusion 22232"
     else:
         message = "Not a Building"
-    return render_template('home.html', message=message)
+    return render_template('home.php', message=message)
     #return(str(select)) # just to see what select is
     
 @app.route("/handle_data4" , methods=['GET', 'POST'])
 def handle_data4():
-    userType = request.args.get('userType')
-    #userType = request.form.get('adminbutton')
-    if userType == "WVdSdGFXND0=":
-        #admin user
+    if 'WVdSdGFXND0=' in request.form:
         message2 = "The tresure is located in Building F."
     else:
         message2 = "Unable to access data. You are not an admin."
-    return render_template('home.html', message2=message2)
+    return render_template('home.php', message2=message2)
     
 @app.route('/handle_dataB', methods=['POST'])
 def handle_dataB():
-    projectpath = request.form['projectFilepath']
+    projectpath2 = request.form['projectFilepath']
     conn = sqlite3.connect('citiesDatabase.db')
     c = conn.cursor()
-    val = (projectpath,) #good one
+    stash2 = []
+    #if projectpath2.find('=') != -1:
+	#return render_template('betterHome.php', stash2=stash2)
+    val = (projectpath2,) #good one
     c.execute('SELECT * FROM cities WHERE name = ?', val) #good one
-    print c.fetchall()
-    stash = []
+    #c.execute("SELECT * FROM cities WHERE name = '%s'" % projectpath2)
     for row in c.fetchall():
       name = row[0]
       state = row[1]
       population = row[2]
       curr = City(name, state, population)
-      stash.append(curr)
+      stash2.append(curr)
     #conn.commit()
-    return render_template('home.html', stash=stash)   
+    return render_template('betterHome.php', stash2=stash2)   
     
+@app.route('/handle_date2B', methods=['POST']) 
+def handle_data2B(): #changed by Irelis; used to be handle_data2() to fix: "AssertionError: View function mapping is overwriting an existing endpoint function: handle_data2"
+    projectpathC = request.form['projectFilepathC']
+    projectpathS = request.form['projectFilepathS']
+    projectpathP = request.form['projectFilepathP']
+    if ("<" in projectpathC) or ("<" in projectpathS) or ("<" in projectpathP):
+	    return render_template('home.php')
+    conn = sqlite3.connect('citiesDatabase.db')
+    c = conn.cursor()
+    val = (projectpathC, projectpathS, projectpathP,)
+    c.execute('INSERT INTO cities (name, state, population) VALUES (?, ?, ?)', val)
+    conn.commit()
+    return render_template('betterHome.php')
+
+@app.route("/handle_data3B" , methods=['GET', 'POST'])
+def handle_data3B():
+    select = request.form.get('DropDown')
+    if select == "QRD":
+        message = "Address: 123 Apple Blossem Avenue, City 1, State of Confusion 45678"
+    elif select == "AHE":
+        message = "Address: 456 Beautiful Butterfly Boulevard, City 1, State of Confusion 78910"
+    elif select == "ZJL":
+        message = "Address: 789 Camelia Countess Court, City 1, State of Confusion 10111"
+    elif select == "CSP":
+        message = "Address: 213 Dusty Dragon Drive, City 1, State of Confusion 14151"
+    elif select == "YNV":
+        message = "Address: 617 Red River Road, City 1, State of Confusion 18192"
+    elif select == "UKF":
+        message = "Address: 021 Winter Sparks Way, City 1, State of Confusion 22232"
+    else:
+        message = "Not a Building"
+    return render_template('betterHome.php', message=message)
+    #return(str(select)) # just to see what select is
+
+@app.route("/handle_data4B" , methods=['GET', 'POST'])
+def handle_data4B():
+    if '1OB59' in request.form:
+        message2 = "The tresure is located in Building F."
+    else:
+        message2 = "Unable to access data. You are not an admin."
+    return render_template('betterHome.php', message2=message2)
+
+@app.route('/handle_dataa', methods=['POST']) #'/test.py'
+def handle_dataa():
+	enterdata = request.form['enterdata']
+	#name = 'Asia<script>alert(1)</script>'
+	return "Hello %s" % enterdata;
+
+@app.route('/handle_dataaB', methods=['POST']) #'/test.py'
+def handle_dataaB():
+	enterdata = request.form['enterdata']
+	#name = 'Asia<script>alert(1)</script>'
+	return "Hello %s" % escape(enterdata);
+
     
 @app.route('/login', methods=['POST'])
 def login():
@@ -149,11 +203,11 @@ def redirect():
     
 @app.route('/decide_good')
 def decide_good():
-    return render_template('betterHome.html')
+    return render_template('betterHome.php')
     
 @app.route('/decide_bad')
 def decide_bad():
-    return render_template('home.html')
+    return render_template('home.php')
     
 if __name__ =='__main__':
 	app.run(debug=True)

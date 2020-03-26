@@ -28,6 +28,7 @@
         <main role="main">
 		<br>
 			<center>
+
 			<h2>Search for a City</h2>
 			<form action="{{ url_for('handle_dataB') }}" method="post"> 
 			  <input type="text" id="city" name="projectFilepath" value="City Name"><br> 
@@ -42,19 +43,20 @@
 				<th>State</th> 
 				<th>Population</th>
 			</tr>
-			{% for i in stash %}
+			{% for i in stash2 %}
 			<tr>
 				<th>{{ i.name }}</th>
 				<th>{{ i.state }}</th> 
 				<th>{{ i.population }}</th>
 			</tr>
+			
 			{% endfor %}
 			</table>
 			<br>
 			<br>
 			
 			<h2>Enter City Data</h2>
-			<form action="{{ url_for('handle_data2') }}" method="post" onSubmit="doStuff()"> 
+			<form action="{{ url_for('handle_data2B') }}" method="post" onSubmit="doStuff()"> 
 			  <input type="text" id="city2" name="{{projectFilepathC | e}}" value="City Name"><br><br>
 			  <input type="text" id="state2" name="projectFilepathS" value="State Name"><br><br>
 			  <input type="text" id="pop2" name="projectFilepathP" value="Population"><br><br>
@@ -64,15 +66,23 @@
 			<p id="demo"></p>
 			<br>
 			<br>
+				
+			<h2>Enter your Name for a Special Message</h2>
+			<form action="{{ url_for('handle_dataaB') }}" method="post">
+			  <input type="text" id="enterdata" name="enterdata" value="Name"><br><br>
+			  <input type=submit value="Submit">
+			</form>
+			<br>
+			<br>
 			
 			<h2>City 1's List of Buildings</h2>
-			<form action="{{ url_for('handle_data3') }}" method="post"> 
+			<form action="{{ url_for('handle_data3B') }}" method="post"> 
 			<select name ="DropDown" id="cars">
-			  <option value="A">Building A</option>
-			  <option value="B">Building B</option>
-			  <option value="C">Building C</option>
-			  <option value="D">Building D</option>
-			  <option value="E">Building E</option>
+			  <option type="hidden" value="QRD">Building A</option>
+			  <option type="hidden" value="AHE">Building B</option>
+			  <option type="hidden" value="ZJL">Building C</option>
+			  <option type="hidden" value="CSP">Building D</option>
+			  <option type="hidden" value="YNV">Building E</option>
 			</select>
 			<br> 
 			<br>
@@ -82,8 +92,8 @@
 			<th>{{ message }}</th>
 			<br>
 			<br>
-			<form action="{{ url_for('handle_data4') }}" method="post" > 
-				<button type=submit name="adminbutton" value="ZFhObGNnPT0=">View Important Information</button>
+			<form action="{{ url_for('handle_data4B') }}" method="post"> 
+				<input type=submit name="8K72D" value="View Important Information">
 			</form>
 			
 			<br>
