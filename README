@@ -1,49 +1,64 @@
+# README - Mini Project 1
 
-View the webpage at https://irelis-test.appspot.com/
+> View the webpage at https://irelis-test.appspot.com/
 
 The four exploits are:
-* Insecure Direct Object Reference
 * SQL Injection
 * Cross-Site Scripting
-* Session Hijacking/Fixation
+* Insecure Direct Object Reference
+* Session Hijacking/Fixation, Session Managment
 
 More information about exploits and the prevention measures are covered in the report.
 
-## Blue
+## SQL Injection
 
-Vulnerability #1: __________________
+Insecure Dashboard 
+<img src="Unit78-Recording1.gif" width="800">
 
-Vulnerability #2: __________________
-
-
-## Green
-
-Vulnerability #1: _____XSS in Feedback Form_____________
-
-Vulnerability #2: __________________
+Secure Dashboard 
+<img src="Unit78-Recording1.gif" width="800">
 
 
-## Red
+## Cross-Site Scripting
 
-Vulnerability #1: __________________
+Insecure Dashboard 
+<img src="Unit78-Recording1.gif" width="800">
 
-Vulnerability #2: __________________
-
-
-## Notes
-
-Describe any challenges encountered while doing the work
+Secure Dashboard 
+<img src="Unit78-Recording1.gif" width="800">
 
 
+## Insecure Direct Object Reference
+
+Insecure Dashboard 
+<img src="Unit78-Recording1.gif" width="800">
+
+Secure Dashboard 
+<img src="Unit78-Recording1.gif" width="800">
+
+
+## Session Managment
+
+Insecure Dashboard 
+<img src="Unit78-Recording1.gif" width="800">
+
+Secure Dashboard 
+<img src="Unit78-Recording1.gif" width="800">
+
+
+## Salt and Pepper Decryption
+
+<img src="Unit78-Recording1.gif" width="800">
+
+
+## Logging In and Creating an Account
+
+Login
+<img src="Unit78-Recording1.gif" width="800">
+
+Create Account
+<img src="Unit78-Recording1.gif" width="800">
 
 
 
-README
-
-Deployed Link: https://irelis-test.appspot.com/
-
-One of the correct login usernames and password is:
-username - admin
-password - admin
-Use this to get onto the dashboard. Alternativly, you can make your own account on the create account page.
 
